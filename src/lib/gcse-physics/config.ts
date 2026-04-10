@@ -1,0 +1,45 @@
+// GCSE Physics Configuration
+// Generated from top_200_exam_universe_seed.csv
+
+export const EXAM_CONFIG = {
+  examId: "EXAM102",
+  slug: "gcse-physics",
+  name: "GCSE Physics",
+  fullName: "GCSE Physics",
+  alias: "GCSE Physics",
+  family: "GCSE",
+  category: "School exams",
+  subcategory: "Secondary qualification",
+  country: "United Kingdom",
+  region: "EMEA",
+  languages: ["English"],
+  estimatedAnnualTakers: "high",
+  testingWindow: "May-Jun",
+  schedulePattern: "Annual",
+  ageGroup: "14-16",
+  targetUser: "School student",
+  delivery: "Paper-based",
+  questionTypes: ["MCQ","structured response"],
+  adaptivity: "Linear",
+  sections: "2 papers",
+  scoringMode: "Grade 1-9",
+  essayOrSpeaking: "No",
+  ipRisk: "Low",
+  contentReuse: "school_science",
+  uiEngine: "paper_structured_response",
+  monetizationPotential: "High",
+  tier: "Tier 3",
+  launchWave: "Wave 5",
+  themeColor: "#D97706",
+  themeColorDark: "#B45309",
+  localizationComplexity: "Low",
+  offlineNeeded: true,
+  mobileFirst: true,
+  locale: "en",
+  isRTL: false,
+  freemiumGate: {
+    dailyQuestions: 10,
+  },
+} as const;
+
+export type ExamConfig = typeof EXAM_CONFIG;

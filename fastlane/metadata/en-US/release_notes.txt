@@ -1,0 +1,5 @@
+Initial release of Koydo GCSE Physics Prep.
+
+• Practice questions
+• Score tracking
+• AI tutor integration
