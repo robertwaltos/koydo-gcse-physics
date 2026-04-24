@@ -86,16 +86,18 @@ Be honest and constructive. Score fairly — most student essays fall between 2-
     model_paragraph: string;
   };
 
-  // Store the evaluation
-  await supabase.from("essay_submissions").insert({
-    user_id: user.id,
-    exam_id: EXAM_CONFIG.slug,
-    domain: domain ?? "Writing",
-    prompt: essayPrompt,
-    essay_text: essay,
-    evaluation: evaluation,
-    composite_score: evaluation.composite,
-  }).catch(() => null); // Non-blocking — table may not exist in all envs
+  // Store the evaluation — non-blocking, table may not exist in all envs
+  try {
+    await supabase.from("essay_submissions").insert({
+      user_id: user.id,
+      exam_id: EXAM_CONFIG.slug,
+      domain: domain ?? "Writing",
+      prompt: essayPrompt,
+      essay_text: essay,
+      evaluation: evaluation,
+      composite_score: evaluation.composite,
+    });
+  } catch { /* ignore */ }
 
   return NextResponse.json({ evaluation, prompt: essayPrompt });
 }
